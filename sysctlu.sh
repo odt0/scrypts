@@ -25,7 +25,6 @@ PARAM=$2
 # $3 - новое значение
 VAL=$3
 
-#echo "`grep -Po '^${PARAM}*=*\K.*' /etc/sysctl.conf`"
 echo "$(grep -c $PARAM $FILE)"
 
 if [[ $(grep -c ^$PARAM $FILE) -gt 0 ]] && [[ $(grep -Po '^${PARAM}*=*\K.*' $FILE) != $VAL ]];
